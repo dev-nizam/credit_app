@@ -1,4 +1,5 @@
 import 'package:credits/Screen/home/costomer/CreateCostomer.dart';
+import 'package:credits/Screen/widgets/creditview.dart';
 import 'package:flutter/material.dart';
 
 class Costomer extends StatefulWidget {
@@ -23,18 +24,22 @@ class _CostomerState extends State<Costomer> {
               child: ListView.separated(
                   itemBuilder: (BuildContext context, int index) => Container(
                         margin: EdgeInsets.only(left: 20),
-                        child: ListTile(
-                          trailing:Text(
-                            "1000",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 25),
+                        child: GestureDetector(onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (ctx)=>CreditView()));
+                        },
+                          child: ListTile(
+                            trailing:Text(
+                              "1000",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 25),
+                            ),
+                            title: Text(
+                              "name",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 25),
+                            ),
+                            subtitle: Text("9847478388"),
                           ),
-                          title: Text(
-                            "name",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 25),
-                          ),
-                          subtitle: Text("9847478388"),
                         ),
                       ),
                   separatorBuilder: (BuildContext context, int index) =>
